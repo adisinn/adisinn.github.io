@@ -262,6 +262,46 @@ document.querySelectorAll('.skill-card, .project-card').forEach(card => {
     });
 });
 
+// Certificate Modal Functionality
+const certModal = document.getElementById('certModal');
+const certModalClose = document.querySelector('.cert-modal-close');
+const certCards = document.querySelectorAll('.cert-card');
+
+// Open certificate modal
+certCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const title = this.getAttribute('data-cert-title');
+        const issuer = this.getAttribute('data-cert-issuer');
+        const date = this.getAttribute('data-cert-date');
+        const link = this.getAttribute('data-cert-link');
+        
+        document.getElementById('certTitle').textContent = title;
+        document.getElementById('certIssuer').textContent = 'Issued by: ' + issuer;
+        document.getElementById('certDate').textContent = 'Completed: ' + date;
+        document.getElementById('certLink').href = link;
+        
+        certModal.classList.remove('hidden');
+    });
+});
+
+// Close certificate modal
+certModalClose.addEventListener('click', function() {
+    certModal.classList.add('hidden');
+});
+
+certModal.addEventListener('click', function(e) {
+    if (e.target === certModal) {
+        certModal.classList.add('hidden');
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        certModal.classList.add('hidden');
+    }
+});
+
 // Console welcome message
 console.log('%c🔥 CYBER PORTFOLIO INITIALIZED 🔥', 
     'color: #00ffff; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #00ffff;');

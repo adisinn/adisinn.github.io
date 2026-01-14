@@ -243,30 +243,35 @@
         <div class="container">
             <h2 class="section-title glitch" data-text="// CERTIFICATIONS">&gt; CERTIFICATIONS</h2>
             <div class="certifications-grid">
-                <div class="cert-card">
+                <div class="cert-card" data-cert-title="Business Analytics" data-cert-issuer="University of California, Berkeley (Coursera)" data-cert-date="2024" data-cert-link="https://coursera.org/verify/business-analytics">
                     <div class="cert-icon">&#127891;</div>
                     <h3>Business Analytics</h3>
                     <p class="cert-issuer">University of California, Berkeley (Coursera)</p>
+                    <p class="cert-click-hint">[CLICK TO VIEW]</p>
                 </div>
-                <div class="cert-card">
+                <div class="cert-card" data-cert-title="Strategy & Game Theory" data-cert-issuer="IIM Ahmedabad (Coursera)" data-cert-date="2024" data-cert-link="https://coursera.org/verify/strategy-game-theory">
                     <div class="cert-icon">&#127891;</div>
                     <h3>Strategy & Game Theory</h3>
                     <p class="cert-issuer">IIM Ahmedabad (Coursera)</p>
+                    <p class="cert-click-hint">[CLICK TO VIEW]</p>
                 </div>
-                <div class="cert-card">
+                <div class="cert-card" data-cert-title="GenAI Data Analytics" data-cert-issuer="Tata (Forage)" data-cert-date="2024" data-cert-link="https://forage.com/verify/genai-data-analytics">
                     <div class="cert-icon">&#127891;</div>
                     <h3>GenAI Data Analytics</h3>
                     <p class="cert-issuer">Tata (Forage)</p>
+                    <p class="cert-click-hint">[CLICK TO VIEW]</p>
                 </div>
-                <div class="cert-card">
+                <div class="cert-card" data-cert-title="High Performance Collaboration" data-cert-issuer="Northwestern University (Coursera)" data-cert-date="2024" data-cert-link="https://coursera.org/verify/collaboration-leadership">
                     <div class="cert-icon">&#127891;</div>
                     <h3>High Performance Collaboration</h3>
                     <p class="cert-issuer">Northwestern University (Coursera)</p>
+                    <p class="cert-click-hint">[CLICK TO VIEW]</p>
                 </div>
-                <div class="cert-card">
+                <div class="cert-card" data-cert-title="Product Management Job Simulation" data-cert-issuer="Electronic Arts (Forage)" data-cert-date="2024" data-cert-link="https://forage.com/verify/product-management-ea">
                     <div class="cert-icon">&#127891;</div>
                     <h3>Product Management Job Simulation</h3>
                     <p class="cert-issuer">Electronic Arts (Forage)</p>
+                    <p class="cert-click-hint">[CLICK TO VIEW]</p>
                 </div>
             </div>
         </div>
@@ -310,6 +315,19 @@
             </div>
         </div>
     </section>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal hidden">
+        <div class="cert-modal-content">
+            <span class="cert-modal-close">&times;</span>
+            <h2 id="certTitle"></h2>
+            <div class="cert-modal-body">
+                <p id="certIssuer"></p>
+                <p id="certDate"></p>
+                <a id="certLink" href="#" target="_blank" class="btn-cyber">VIEW CERTIFICATE</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

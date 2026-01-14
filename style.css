@@ -640,6 +640,120 @@ body {
     line-height: 1.4;
 }
 
+.cert-click-hint {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--neon-green);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px var(--neon-green);
+    animation: blink 1s infinite;
+}
+
+/* Certificate Modal */
+.cert-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.cert-modal.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.cert-modal-content {
+    background: var(--card-bg);
+    border: 2px solid var(--primary-cyan);
+    padding: 3rem;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: var(--primary-magenta);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.cert-modal-close:hover {
+    color: var(--primary-cyan);
+    text-shadow: 0 0 10px var(--primary-cyan);
+    transform: rotate(90deg);
+}
+
+.cert-modal-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-cyan);
+    text-shadow: 0 0 10px var(--primary-cyan);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.cert-modal-body {
+    margin-top: 1.5rem;
+}
+
+.cert-modal-body p {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cert-modal-body p:first-child {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.cert-modal-body .btn-cyber {
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+/* Make cert cards clickable */
+.cert-card {
+    cursor: pointer;
+}
+
+.cert-card {
+    transition: all 0.3s;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6), inset 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
