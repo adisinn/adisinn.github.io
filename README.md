@@ -45,4 +45,4 @@ git clone https://github.com/adisinn/adisinn.github.io.git
 ## 🌐 Connect
 
 - GitHub: [@adisinn](https://github.com/adisinn)
-- Email: contact@adisinn.dev
+- Email: ascpyush03@gmail.com
