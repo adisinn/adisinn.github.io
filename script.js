@@ -153,24 +153,28 @@ window.addEventListener('scroll', () => {
 // Form Submission
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-        
-        // Simulate form submission
-        console.log('Form submitted:', formData);
-        
-        // Show success message
-        alert('MESSAGE_SENT.exe ✓\nThank you for your message! I will respond within 24 hours.');
-        
-        // Reset form
-        contactForm.reset();
+
+        const action = contactForm.getAttribute('action');
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                alert('MESSAGE_SENT.exe ✓\nThank you for your message! I will respond within 24 hours.');
+                contactForm.reset();
+            } else {
+                alert('TRANSMISSION_FAILED.exe ✗\nPlease try again or email me directly.');
+            }
+        } catch (error) {
+            alert('NETWORK_ERROR.exe ✗\nPlease try again or email me directly.');
+        }
     });
 }
 
@@ -266,6 +270,7 @@ document.querySelectorAll('.skill-card, .project-card').forEach(card => {
 const certModal = document.getElementById('certModal');
 const certModalClose = document.querySelector('.cert-modal-close');
 const certCards = document.querySelectorAll('.cert-card');
+const certDirectLinks = document.querySelectorAll('.cert-direct-link');
 
 // Open certificate modal
 certCards.forEach(card => {
@@ -281,6 +286,13 @@ certCards.forEach(card => {
         document.getElementById('certLink').href = link;
         
         certModal.classList.remove('hidden');
+    });
+});
+
+// Prevent direct link clicks from opening modal
+certDirectLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 });
 

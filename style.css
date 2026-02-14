@@ -649,6 +649,26 @@ body {
     animation: blink 1s infinite;
 }
 
+.cert-direct-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--primary-cyan);
+    color: var(--primary-cyan);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.cert-direct-link:hover {
+    color: var(--dark-bg);
+    background: var(--primary-cyan);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
+
 /* Certificate Modal */
 .cert-modal {
     position: fixed;
